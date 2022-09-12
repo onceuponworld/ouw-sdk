@@ -70,7 +70,7 @@ type MartialArtsAttributes struct {
 
 
 type User struct {
-	ID 						string			`redis:"id"`
+	//ID 						string			`redis:"id"`
 	//Email         string      `redis:"email"`
 	Pass 					string			`redis:"password"`
 	Name          string      `redis:"name"`
