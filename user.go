@@ -58,7 +58,7 @@ type MilitaryAttributes struct {
 
 type User struct {
 	ID 						string			`redis:"id"`
-	Email         string      `redis:"email"`
+	//Email         string      `redis:"email"`
 	Pass 					string			`redis:"password"`
 	Name          string      `redis:"name"`
 	Job          	string      `redis:"job"`
