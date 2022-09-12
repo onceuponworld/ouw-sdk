@@ -57,12 +57,12 @@ type MilitaryAttributes struct {
 
 
 type User struct {
-	ID 						string			`json:"id"`
-	Email         string      `json:"email"`
-	Pass 					string			`json:"password"`
-	Name          string      `json:"name"`
-	Job          	string      `json:"job"`
-	Municipal     string      `json:"municipal"`
+	ID 						string			`redis:"id"`
+	Email         string      `redis:"email"`
+	Pass 					string			`redis:"password"`
+	Name          string      `redis:"name"`
+	Job          	string      `redis:"job"`
+	Municipal     string      `redis:"municipal"`
 	Attributes    CharAttributes
 	Combat      	MilitaryAttributes
 }
