@@ -5,8 +5,7 @@ type User struct {
 	//ID 								string			`redis:"id"`
 	//Email         		string      `redis:"email"`
 	Name          			string      `redis:"name"`
-	Pass 								string			`redis:"password"`
-	//Job          			string      `redis:"job"`
+	Job          				string      `redis:"job"`
 	Municipal     			string      `redis:"municipal"`
 	Female        			bool      	`redis:"female"`
 	Age           			int         `redis:"age"`

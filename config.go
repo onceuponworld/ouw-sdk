@@ -1,6 +1,19 @@
 package ouwsdk
 
 
+type RedisConfig struct {
+  Host          string       `json:"host"`
+	Port          string       `json:"port"`
+}
+
+
+type AppConfig struct {
+	Host					string				`json:"host"`
+	Port					string				`json:"port"`
+	Store         RedisConfig   `json:"store"`
+}
+
+
 type GlobalConf struct {
 	HashLength 					int					`redis:"hash:length"`
 	Female 							int					`redis:"female"`
