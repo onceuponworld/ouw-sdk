@@ -61,7 +61,7 @@ type User struct {
 	//Email         string      `redis:"email"`
 	Pass 					string			`redis:"password"`
 	Name          string      `redis:"name"`
-	Job          	string      `redis:"job"`
+	//Job          	string      `redis:"job"`
 	Municipal     string      `redis:"municipal"`
 	Attributes    CharAttributes
 	Combat      	MilitaryAttributes
