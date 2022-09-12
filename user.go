@@ -56,6 +56,19 @@ type MilitaryAttributes struct {
 }
 
 
+type MartialArtsAttributes struct {
+	Bear					int		`redis:"bear"`
+	Crane					int		`redis:"crane"`
+	Drunken				int		`redis:"drunken"`
+	IronFist			int		`redis:"ironfist"`
+	Leopard				int		`redis:"leopard"`
+	Mantis				int		`redis:"mantis"`
+	Monkey				int		`redis:"monkey"`
+	Snake					int		`redis:"snake"`
+	Tiger					int		`redis:"tiger"`
+}
+
+
 type User struct {
 	ID 						string			`redis:"id"`
 	//Email         string      `redis:"email"`
