@@ -2,7 +2,7 @@ package ouwsdk
 
 
 type CharAttributes struct {
-	IsFemale        		bool      	`redis:"isFemale"`
+	Female        			bool      	`redis:"female"`
 	Age           			int         `redis:"age"`
 	Height        			int         `redis:"height"`
 	Family        			string      `redis:"family"`
@@ -36,23 +36,23 @@ type MilitaryAttribute struct {
 
 
 type MilitaryAttributes struct {
-	Dagger				MilitaryAttribute		`redis:"dagger"`
-	Sword					MilitaryAttribute		`redis:"sword"`
-	Scimitar			MilitaryAttribute		`redis:"scimitar"`
-	Spear					MilitaryAttribute		`redis:"spear"`
-	HookedSpear		MilitaryAttribute		`redis:"hookedSpear"`
-	Staff					MilitaryAttribute		`redis:"staff"`
-	DragonBlade		MilitaryAttribute		`redis:"dragonBlade"`
-	Club					MilitaryAttribute		`redis:"club"`
-	Hammer				MilitaryAttribute		`redis:"hammer"`
-	Axe						MilitaryAttribute		`redis:"axe"`
-	Halberd				MilitaryAttribute		`redis:"halberd"`
-	Bow						MilitaryAttribute		`redis:"bow"`
-	CrossBow			MilitaryAttribute		`redis:"crossbow"`
-	HorseBow			MilitaryAttribute		`redis:"horseBow"`
-	Horse					MilitaryAttribute		`redis:"horse"`
-	Chariot				MilitaryAttribute		`redis:"chariot"`
-	Shield				MilitaryAttribute		`redis:"shield"`
+	Dagger				int		`redis:"dagger"`
+	Sword					int		`redis:"sword"`
+	Scimitar			int		`redis:"scimitar"`
+	Spear					int		`redis:"spear"`
+	HookedSpear		int		`redis:"hookedspear"`
+	Staff					int		`redis:"staff"`
+	DragonBlade		int		`redis:"dragonblade"`
+	Club					int		`redis:"club"`
+	Hammer				int		`redis:"hammer"`
+	Axe						int		`redis:"axe"`
+	Halberd				int		`redis:"halberd"`
+	Bow						int		`redis:"bow"`
+	CrossBow			int		`redis:"crossbow"`
+	HorseBow			int		`redis:"horsebow"`
+	Horse					int		`redis:"horse"`
+	Chariot				int		`redis:"chariot"`
+	Shield				int		`redis:"shield"`
 }
 
 
