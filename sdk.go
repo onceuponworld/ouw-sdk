@@ -18,6 +18,7 @@ const (
 const (
 	KEY_CONF_GLOBAL             = "configs:global"
 	KEY_CONF_INIT             	= "configs:init"
+	KEY_EMAILS                  = "emails"
 	KEY_FAMILIES                = "families"
 	KEY_FAMILY                	= "family"
 	KEY_KINGDOM                 = "kingdom"
