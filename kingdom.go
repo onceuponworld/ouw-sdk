@@ -9,6 +9,11 @@ type Kingdom struct {
 	BirthRate             int					`redis:"birthRate"`
 	DeathRate      				int					`redis:"deathRate"`
 	Population            int					`redis:"population"`
+	Land                  int         `redis:"land"`
+	Wealth                int         `redis:"wealth"`
+	Trees                 int         `redis:"trees"`
+	Rocks                 int         `redis:"rocks"`
+	Cows                 	int         `redis:"cows"`
 	TaxRate               int         `redis:"taxRate"`
-	ConscriptAge    			int         `redis:"conscriptAge"`
+	//ConscriptAge    			int         `redis:"conscriptAge"`
 }
