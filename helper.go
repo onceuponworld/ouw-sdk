@@ -27,7 +27,7 @@ func Addr(h string, p string) string {
 } // Addr
 
 
-func ParseConfig(f string, a AppConfig) {
+func ParseConfig(f string, a *AppConfig) {
 
 	_, err := os.Stat(f)
 
