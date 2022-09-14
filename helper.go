@@ -22,8 +22,33 @@ func InitRedis(a string) *redis.Client {
 } // InitRedis
 
 
-func Addr(h string, p string) string {
-	return fmt.Sprintf("%s:%s", h, p)
+func Addr(h string, p string, t int) string {
+
+	var host, port string
+
+	if t == APP_SERVER_WEB {
+
+		host = DEFAULT_HOST
+		port = DEFAULT_PORT
+	
+	} else if t == APP_SERVER_REDIS {
+
+		host = DEFAULT_REDIS_HOST
+		port = DEFAULT_REDIS_PORT
+		
+	}
+
+
+	if len(h) != 0 {		
+		host = h
+	}
+
+	if len(p) != 0 {
+		port = p
+	}
+
+	return fmt.Sprintf("%s:%s", host, port)
+
 } // Addr
 
 
