@@ -6,7 +6,20 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
+
+	"github.com/go-redis/redis/v8"
 )
+
+
+func InitRedis(a string) *redis.Client {
+	
+	return redis.NewClient(&redis.Options{
+		Addr: a,
+		Password: "",
+		DB: 0,
+	})
+
+} // InitRedis
 
 
 func Addr(h string, p string) string {
