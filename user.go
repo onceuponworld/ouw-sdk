@@ -2,8 +2,6 @@ package ouwsdk
 
 
 type User struct {
-	//ID 								string			`redis:"id"`
-	//Email         		string      `redis:"email"`
 	Name          			string      `redis:"name"`
 	Job          				string      `redis:"job"`
 	Municipal     			string      `redis:"municipal"`

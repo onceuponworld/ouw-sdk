@@ -11,10 +11,12 @@ import (
 )
 
 
-func InitRedis(a string) *redis.Client {
+func InitRedis(h string, p string) *redis.Client {
 	
+	address := Addr(h, p)
+
 	return redis.NewClient(&redis.Options{
-		Addr: a,
+		Addr: address,
 		Password: "",
 		DB: 0,
 	})
@@ -22,37 +24,12 @@ func InitRedis(a string) *redis.Client {
 } // InitRedis
 
 
-func Addr(h string, p string, t int) string {
-
-	var host, port string
-
-	if t == APP_SERVER_WEB {
-
-		host = DEFAULT_HOST
-		port = DEFAULT_PORT
-	
-	} else if t == APP_SERVER_REDIS {
-
-		host = DEFAULT_REDIS_HOST
-		port = DEFAULT_REDIS_PORT
-		
-	}
-
-
-	if len(h) != 0 {		
-		host = h
-	}
-
-	if len(p) != 0 {
-		port = p
-	}
-
-	return fmt.Sprintf("%s:%s", host, port)
-
+func Addr(h string, p string) string {
+	return fmt.Sprintf("%s:%s", h, p)
 } // Addr
 
 
-func ParseConfig(f string, a *AppConfig) {
+func ParseConfig(f string, a *AppConfig, store bool) {
 
 	_, err := os.Stat(f)
 
@@ -70,7 +47,14 @@ func ParseConfig(f string, a *AppConfig) {
 
 			if err != nil {
 				log.Println(err)
-			}
+			} else {
+
+				if len(a.Host) == 0 || len(a.Port) == 0 || (store &&
+					(len(a.Store.Host) == 0 || len(a.Store.Port) == 0)) {
+					log.Fatal("Error: config file invalid, please fix.")
+				}
+
+			} 
 
 		}
 	

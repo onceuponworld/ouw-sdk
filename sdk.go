@@ -3,12 +3,7 @@ package ouwsdk
 
 const (
 	APP_NAME									= "ouw-sdk"
-	APP_SERVER_REDIS					= 0
-	APP_SERVER_WEB						= 1
 	APP_VERSION								= "1.0"
-
-	
-
 )
 
 
