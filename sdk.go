@@ -45,8 +45,8 @@ type ResponseErr struct {
 }
 
 
-var rds *redis.Client
+var Rds *redis.Client
 
-var app AppConfig
+var App AppConfig
 
-var ctx = context.Background()
+var Ctx = context.Background()
