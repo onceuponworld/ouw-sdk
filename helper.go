@@ -2,14 +2,24 @@ package ouwsdk
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
-
-	"github.com/go-redis/redis/v8"
 )
+
+
+func Init(store bool) {
+
+	flag.Parse()
+
+	parseConfig(store)
+
+	Rds = initRedis(app.Store.Host, app.Store.Port)
+
+} // Init
 
 
 func CheckStr(p string, l int) bool {
@@ -42,46 +52,33 @@ func SendErr(m string, w http.ResponseWriter) {
 } // SendErr
 
 
-func InitRedis(h string, p string) *redis.Client {
-	
-	address := Addr(h, p)
-
-	return redis.NewClient(&redis.Options{
-		Addr: address,
-		Password: "",
-		DB: 0,
-	})
-
-} // InitRedis
-
-
 func Addr(h string, p string) string {
 	return fmt.Sprintf("%s:%s", h, p)
 } // Addr
 
 
-func ParseConfig(f string, a *AppConfig, store bool) {
+func parseConfig(store bool) {
 
-	_, err := os.Stat(f)
+	_, err := os.Stat(*conf)
 
 	if err != nil || os.IsNotExist(err) {
 		log.Fatal(err)
 	} else {
 
-		buf, err := ioutil.ReadFile(f)
+		buf, err := ioutil.ReadFile(*conf)
 
 		if err != nil {
 			log.Fatal(err)
 		} else {
 
-			err := json.Unmarshal(buf, &a)
+			err := json.Unmarshal(buf, &app)
 
 			if err != nil {
 				log.Println(err)
 			} else {
 
-				if len(a.Host) == 0 || len(a.Port) == 0 || (store &&
-					(len(a.Store.Host) == 0 || len(a.Store.Port) == 0)) {
+				if len(app.Host) == 0 || len(app.Port) == 0 || (store &&
+					(len(app.Store.Host) == 0 || len(app.Store.Port) == 0)) {
 					log.Fatal("Error: config file invalid, please fix.")
 				}
 
@@ -91,4 +88,4 @@ func ParseConfig(f string, a *AppConfig, store bool) {
 	
 	}
 
-} // ParseConfig
+} // parseConfig

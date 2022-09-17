@@ -2,6 +2,7 @@ package ouwsdk
 
 import (
 	"context"
+	"flag"
 
 	"github.com/go-redis/redis/v8"
 )
@@ -14,6 +15,7 @@ const (
 
 
 const (
+	DEFAULT_CONF_FILE       = "./config.json"
 	DEFAULT_HOST						= "127.0.0.1"
 	DEFAULT_PORT            = "9000"
 	DEFAULT_REDIS_HOST      = "127.0.0.1"
@@ -45,8 +47,13 @@ type ResponseErr struct {
 }
 
 
+var (
+	conf = flag.String("conf", DEFAULT_CONF_FILE, "config file path")
+)
+
+
 var Rds *redis.Client
 
-var App AppConfig
+var app AppConfig
 
-var Ctx = context.Background()
+var ctx = context.Background()
