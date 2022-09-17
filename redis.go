@@ -5,7 +5,7 @@ import (
 )
 
 
-func checkExists(k string, e string) bool {
+func CheckExists(k string, e string) bool {
 				
 	res, err := Rds.SIsMember(Ctx, k, e).Result()
 	
@@ -21,4 +21,4 @@ func checkExists(k string, e string) bool {
 
 	return true
 
-} // checkExists
+} // CheckExists
