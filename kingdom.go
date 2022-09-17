@@ -15,5 +15,6 @@ type Kingdom struct {
 	Rocks                 int         `redis:"rocks"`
 	Cows                 	int         `redis:"cows"`
 	TaxRate               int         `redis:"taxRate"`
-	//ConscriptAge    			int         `redis:"conscriptAge"`
+	ConscriptAge    			int         `redis:"conscriptAge"`
+	Municipals            map[string] string `redis"municipals"`
 }

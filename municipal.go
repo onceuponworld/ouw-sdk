@@ -14,7 +14,7 @@ type Demography struct {
 	U100						int	
 }
 
-type Town struct {
+type Municipal struct {
 	Males						Demography							`redis:"males"`
 	Females					Demography							`redis:"females"`
 	Latitude				int											`redis:"latitude"`
@@ -23,3 +23,8 @@ type Town struct {
 	Wealth          int											`redis:"wealth"`
 	Supply          map[string] Resource		`redis:"supply"`
 }
+
+
+func addMunicipal() {
+
+} // addMunicipal

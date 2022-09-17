@@ -5,7 +5,7 @@ import (
 )
 
 
-func CheckExists(k string, e string) bool {
+func SetExist(k string, e string) bool {
 				
 	res, err := Rds.SIsMember(Ctx, k, e).Result()
 	
@@ -21,4 +21,20 @@ func CheckExists(k string, e string) bool {
 
 	return true
 
-} // CheckExists
+} // SetExist
+
+
+func SetAdd(k string, v string) {
+
+	err := Rds.SAdd(Ctx, k, v)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+} // SetAdd
+
+
+func MapAdd(k string) {
+
+} // MapAdd
