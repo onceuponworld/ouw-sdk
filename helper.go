@@ -12,7 +12,7 @@ import (
 )
 
 
-func checkStr(p string, l int) bool {
+func CheckStr(p string, l int) bool {
 
 	if len(p) < l {
 		return false
@@ -20,7 +20,7 @@ func checkStr(p string, l int) bool {
 		return true
 	}
 
-} // checkStr
+} // CheckStr
 
 
 func SendErr(m string, w http.ResponseWriter) {
