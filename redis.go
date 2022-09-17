@@ -7,22 +7,22 @@ import (
 )
 
 
-func initRedis(h string, p string) *redis.Client {
+func initRedis() {
 	
-	address := Addr(h, p)
+	address := addr(app.Store.Host, app.Store.Port)
 
-  return redis.NewClient(&redis.Options{
+  Store = redis.NewClient(&redis.Options{
 		Addr: address,
-		Password: "",
+		Password: EMPTY_STR,
 		DB: 0,
 	})
 
-} // InitReinitRedisdis
+} // InitRedis
 
 
 func SetExist(k string, e string) bool {
 				
-	res, err := Rds.SIsMember(ctx, k, e).Result()
+	res, err := Store.SIsMember(ctx, k, e).Result()
 	
 	if err != nil {
 		
@@ -41,7 +41,7 @@ func SetExist(k string, e string) bool {
 
 func SetAdd(k string, v string) {
 
-	err := Rds.SAdd(ctx, k, v)
+	err := Store.SAdd(ctx, k, v)
 
 	if err != nil {
 		log.Println(err)

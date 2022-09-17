@@ -17,7 +17,7 @@ func Init(store bool) {
 
 	parseConfig(store)
 
-	Rds = initRedis(app.Store.Host, app.Store.Port)
+	initRedis()
 
 } // Init
 
@@ -52,9 +52,19 @@ func SendErr(m string, w http.ResponseWriter) {
 } // SendErr
 
 
-func Addr(h string, p string) string {
+func GetAddr() string {
+  return addr(app.Host, app.Port)
+} // GetAddr
+
+
+func GetStoreAddr() string {
+	return addr(app.Store.Host, app.Store.Port)
+} // GetStoreAddr
+
+
+func addr(h string, p string) string {
 	return fmt.Sprintf("%s:%s", h, p)
-} // Addr
+} // addr
 
 
 func parseConfig(store bool) {

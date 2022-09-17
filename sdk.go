@@ -24,6 +24,11 @@ const (
 
 
 const (
+	EMPTY_STR								= ""
+)
+
+
+const (
 	KEY_CONF_GLOBAL             = "configs:global"
 	KEY_CONF_INIT             	= "configs:init"
 	KEY_EMAILS                  = "emails"
@@ -52,7 +57,7 @@ var (
 )
 
 
-var Rds *redis.Client
+var Store *redis.Client
 
 var app AppConfig
 
