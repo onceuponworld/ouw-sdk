@@ -50,6 +50,8 @@ func SetAdd(k string, v string) {
 } // SetAdd
 
 
-func MapAdd(k string) {
+func MapAdd(k string, o interface{}) {
+
+	log.Println(o)
 
 } // MapAdd
