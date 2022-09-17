@@ -32,3 +32,8 @@ const (
 	KEY_USER                    = "user"
 	KEY_USERS                   = "users"
 )
+
+
+type ResponseErr struct {
+	Msg 				string				`json:"msg"`
+}

@@ -5,10 +5,41 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 
 	"github.com/go-redis/redis/v8"
 )
+
+
+func checkStr(p string, l int) bool {
+
+	if len(p) < l {
+		return false
+	} else {
+		return true
+	}
+
+} // checkStr
+
+
+func SendErr(m string, w http.ResponseWriter) {
+
+	w.WriteHeader(http.StatusBadRequest)
+
+	em := ResponseErr{
+		Msg: m,
+	}
+
+	j, err := json.Marshal(em)
+
+	if err != nil {
+		log.Println(err)
+	} else {
+		w.Write(j)
+	}
+
+} // SendErr
 
 
 func InitRedis(h string, p string) *redis.Client {
