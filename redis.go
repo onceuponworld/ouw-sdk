@@ -7,7 +7,7 @@ import (
 
 func checkExists(k string, e string) bool {
 				
-	res, err := rds.SIsMember(ctx, k, e).Result()
+	res, err := Rds.SIsMember(Ctx, k, e).Result()
 	
 	if err != nil {
 		
