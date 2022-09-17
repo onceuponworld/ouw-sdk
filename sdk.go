@@ -1,5 +1,11 @@
 package ouwsdk
 
+import (
+	"context"
+
+	"github.com/go-redis/redis/v8"
+)
+
 
 const (
 	APP_NAME									= "ouw-sdk"
@@ -37,3 +43,10 @@ const (
 type ResponseErr struct {
 	Msg 				string				`json:"msg"`
 }
+
+
+var rds *redis.Client
+
+var app AppConfig
+
+var ctx = context.Background()
