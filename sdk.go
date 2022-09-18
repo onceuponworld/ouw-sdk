@@ -47,6 +47,17 @@ const (
 )
 
 
+const (
+	FIELD_NAME									= "name"
+	FIELD_POPULATION						= "population"
+	FIELD_WEALTH								= "wealth"
+	FIELD_TREES									= "trees"
+	FIELD_ROCKS									= "rocks"
+	FIELD_LAND									= "land"
+	FIELD_COWS									= "cows"
+)
+
+
 type ResponseErr struct {
 	Msg 				string				`json:"msg"`
 }

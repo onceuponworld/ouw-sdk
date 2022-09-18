@@ -15,6 +15,7 @@ type Demography struct {
 }
 
 type Municipal struct {
+	Name						string									`redis:"name"`
 	Males						Demography							`redis:"males"`
 	Females					Demography							`redis:"females"`
 	Latitude				int											`redis:"latitude"`
