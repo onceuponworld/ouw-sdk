@@ -7,21 +7,21 @@ import (
 
 
 type Kingdom struct {
-	Name									string      `redis:"name"`
-	Capital               bool        `redis:"capital"`
-	MaleRatio							int					`redis:"maleRatio"`
-	MedianAge							int					`redis:"medianAge"`
-	BirthRate             int					`redis:"birthRate"`
-	DeathRate      				int					`redis:"deathRate"`
-	Population            int					`redis:"population"`
-	Land                  int         `redis:"land"`
-	Wealth                int         `redis:"wealth"`
-	Trees                 int         `redis:"trees"`
-	Rocks                 int         `redis:"rocks"`
-	Cows                 	int         `redis:"cows"`
-	TaxRate               int         `redis:"taxRate"`
-	ConscriptAge    			int         `redis:"conscriptAge"`
-	Municipals            []Municipal `redis"municipals"`
+	Name									string      `redis:"name" json:"name"`
+	Capital               bool        `redis:"capital" json:"capital"`
+	MaleRatio							int					`redis:"maleRatio" json:"maleRatio"`
+	MedianAge							int					`redis:"medianAge" json:"medianAge"`
+	BirthRate             int					`redis:"birthRate" json:"birthRate"`
+	DeathRate      				int					`redis:"deathRate" json:"deathRate"`
+	Population            int					`redis:"population" json:"population"`
+	Land                  int         `redis:"land" json:"land"`
+	Wealth                int         `redis:"wealth" json:"wealth"`
+	Trees                 int         `redis:"trees" json:"trees"`
+	Rocks                 int         `redis:"rocks" json:"rocks"`
+	Cows                 	int         `redis:"cows" json:"cows"`
+	TaxRate               int         `redis:"taxRate" json:"taxRate"`
+	ConscriptAge    			int         `redis:"conscriptAge" json:"conscriptAge"`
+	Municipals            []Municipal `redis"municipals" json:"municipals"`
 }
 
 
@@ -34,8 +34,7 @@ func KingdomAdd(k Kingdom) {
 		FIELD_LAND, k.Land,
 		FIELD_TREES, k.Trees,
 		FIELD_ROCKS, k.Rocks,
-		FIELD_WEALTH, k.Wealth
-	)
+		FIELD_WEALTH, k.Wealth)
 
 
 	if err != nil {
