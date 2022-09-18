@@ -34,7 +34,8 @@ func KingdomAdd(k Kingdom) {
 		FIELD_LAND, k.Land,
 		FIELD_TREES, k.Trees,
 		FIELD_ROCKS, k.Rocks,
-		FIELD_WEALTH, k.Wealth)
+		FIELD_WEALTH, k.Wealth
+	)
 
 
 	if err != nil {
