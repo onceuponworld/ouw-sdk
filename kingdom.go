@@ -66,7 +66,9 @@ func KingdomGet(k string) *Kingdom {
 
 	kingdom := Kingdom{}
 
-	err := Store.HGetAll(ctx, k).Scan(&kingdom)
+	key := KingdomKey(k)
+
+	err := Store.HGetAll(ctx, key).Scan(&kingdom)
 
 	if err != nil {
 		
