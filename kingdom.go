@@ -24,7 +24,7 @@ type Kingdom struct {
 	Trees                 int         `redis:"trees" json:"trees"`
 	Rocks                 int         `redis:"rocks" json:"rocks"`
 	Cows                 	int         `redis:"cows" json:"cows"`
-	Bala                  Test				`redis:"bala"`
+	Bala                  Test
 	TaxRate               int         `redis:"taxRate" json:"taxRate"`
 	ConscriptAge    			int         `redis:"conscriptAge" json:"conscriptAge"`
 	Municipals            []Municipal `redis"municipals" json:"municipals"`
