@@ -62,6 +62,20 @@ func GetStoreAddr() string {
 } // GetStoreAddr
 
 
+func ToJson(s interface{}) []byte {
+
+	j, err := json.Marshal(s)
+
+	if err != nil {
+		log.Println(err)
+		return nil
+	} else {
+		return j
+	}
+
+} // ToJson
+
+
 func addr(h string, p string) string {
 	return fmt.Sprintf("%s:%s", h, p)
 } // addr
