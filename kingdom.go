@@ -6,11 +6,6 @@ import (
 )
 
 
-type Test struct {
-	Work					string		`redis:"work"`
-}
-
-
 type Kingdom struct {
 	Name									string      `redis:"name" json:"name"`
 	Capital               bool        `redis:"capital" json:"capital"`
@@ -24,7 +19,6 @@ type Kingdom struct {
 	Trees                 int         `redis:"trees" json:"trees"`
 	Rocks                 int         `redis:"rocks" json:"rocks"`
 	Cows                 	int         `redis:"cows" json:"cows"`
-	Bala                  Test
 	TaxRate               int         `redis:"taxRate" json:"taxRate"`
 	ConscriptAge    			int         `redis:"conscriptAge" json:"conscriptAge"`
 	Municipals            []Municipal `redis"municipals" json:"municipals"`
