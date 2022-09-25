@@ -8,7 +8,7 @@ import (
 
 type Kingdom struct {
 	Name									string      `redis:"name" json:"name"`
-	Capital               bool        `redis:"capital" json:"capital"`
+	Capital               string      `redis:"capital" json:"capital"`
 	MaleRatio							int					`redis:"maleRatio" json:"maleRatio"`
 	MedianAge							int					`redis:"medianAge" json:"medianAge"`
 	BirthRate             int					`redis:"birthRate" json:"birthRate"`
@@ -101,12 +101,11 @@ func KingdomGetAll() []Kingdom {
 } // KingdomGetAll
 
 
-func KingdomUpdate(k Kingdom) {
+func KingdomUpdate(n string, k Kingdom) {
 
-	key := KingdomKey(k.Name)
+	key := KingdomKey(n)
 
 	err := Store.HSet(ctx, key,
-		FIELD_NAME, k.Name,
 		FIELD_POPULATION, k.Population,
 		FIELD_LAND, k.Land,
 		FIELD_WEALTH, k.Wealth,
