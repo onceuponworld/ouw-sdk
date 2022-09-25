@@ -22,7 +22,7 @@ func MunicipalKey(kid string, mid string) string {
 
 
 func MunicipalsKey(kid string) string {
-	return fmt.Sprintf("%s:%s:%s", KEY_KINGDOMS, kid, KEY_MUNICIPALS)
+	return fmt.Sprintf("%s:%s:%s", KEY_KINGDOM, kid, KEY_MUNICIPALS)
 } // MunicipalsKey
 
 
