@@ -25,14 +25,14 @@ type Kingdom struct {
 }
 
 
-func KingdomMapKey(n string) string {
+func KingdomKey(n string) string {
 	return fmt.Sprintf("%s:%s", KEY_KINGDOM, n)
-} // KingdomMapKey
+} // KingdomKey
 
 
-func KingdomSetKey() string {
+func KingdomsKey() string {
 	return KEY_KINGDOMS
-} // KingdomSetKey
+} // KingdomsKey
 
 
 func KingdomAdd(k Kingdom) {
@@ -77,3 +77,23 @@ func KingdomGet(k string) *Kingdom {
 	}
 
 } // KingdomGet
+
+
+func KingdomUpdate(k Kingdom) {
+
+	key := KingdomKey(k.Name)
+
+	err := Store.HSet(ctx, key,
+		FIELD_NAME, k.Name,
+		FIELD_POPULATION, k.Population,
+		FIELD_LAND, k.Land,
+		FIELD_WEALTH, k.Wealth,
+		FIELD_TREES, k.Trees,
+		FIELD_ROCKS, k.Rocks,
+		FIELD_COWS, k.Cows)
+
+	if err != nil {
+		log.Println(err)
+	}
+
+} // KingdomUpdate
