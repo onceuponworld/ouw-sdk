@@ -82,6 +82,25 @@ func KingdomGet(k string) *Kingdom {
 } // KingdomGet
 
 
+func KingdomGetAll() []Kingdom {
+
+	var kingdoms []Kingdom
+
+	keys := SetGetAll(KingdomsKey())
+
+	for _, k := range keys {
+
+		kingdom := KingdomGet(k)
+
+		kingdoms = append(kingdoms, *kingdom)
+
+	}
+
+	return kingdoms
+
+} // KingdomGetAll
+
+
 func KingdomUpdate(k Kingdom) {
 
 	key := KingdomKey(k.Name)
