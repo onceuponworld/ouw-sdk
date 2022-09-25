@@ -48,6 +48,27 @@ func SetAdd(k string, v string) {
 } // SetAdd
 
 
+func SetGetAll(k string) []string {
+				
+	var all []string
+
+	res, err := Store.SMembers(ctx, k).Result()
+	
+	if err != nil {
+		log.Println(err)
+	} else {
+		
+		for _, v := range res {
+			all = append(all, v)
+		}
+		
+	}
+
+	return all
+
+} // SetGetAll
+
+
 func MapAdd(k string, o interface{}) {
 
 	log.Println(o)
