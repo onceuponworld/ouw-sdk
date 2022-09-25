@@ -16,14 +16,14 @@ type Municipal struct {
 }
 
 
-func MunicipalMapKey(kid string, mid string) string {
+func MunicipalKey(kid string, mid string) string {
 	return fmt.Sprintf("%s:%s:%s", KEY_KINGDOM, kid, mid)
-} // MunicipalMapKey
+} // MunicipalKey
 
 
-func MunicipalSetKey(kid string) string {
+func MunicipalsKey(kid string) string {
 	return fmt.Sprintf("%s:%s:%s", KEY_KINGDOMS, kid, KEY_MUNICIPALS)
-} // MunicipalSetKey
+} // MunicipalsKey
 
 
 func addMunicipal() {

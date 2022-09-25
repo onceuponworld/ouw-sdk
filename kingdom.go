@@ -40,6 +40,7 @@ func KingdomAdd(k Kingdom) {
 	key := fmt.Sprintf("%s:%s", KEY_KINGDOM, k.Name)
 
 	err := Store.HSet(ctx, key,
+		FIELD_NAME, k.Name,
 		FIELD_POPULATION, k.Population,
 		FIELD_LAND, k.Land,
 		FIELD_TREES, k.Trees,

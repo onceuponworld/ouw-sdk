@@ -31,10 +31,8 @@ func SetExist(k string, e string) bool {
 		return false
 
 	} else {
-		log.Println(res)
+		return res
 	}
-
-	return true
 
 } // SetExist
 
