@@ -49,3 +49,21 @@ func KingdomAdd(k Kingdom) {
 	}
 
 } // KingdomAdd
+
+
+func KingdomGet(k string) *Kingdom {
+
+	kingdom := Kingdom{}
+
+	err := Store.HGetAll(ctx, k).Scan(&kingdom)
+
+	if err != nil {
+		
+		log.Println(err)
+		return nil
+
+	} else {
+		return &kingdom
+	}
+
+} // KingdomGet
