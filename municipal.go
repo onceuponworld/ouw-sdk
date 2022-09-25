@@ -15,17 +15,22 @@ type Demography struct {
 }
 
 type Municipal struct {
-	Name						string									`redis:"name"`
-	Males						Demography							`redis:"males"`
-	Females					Demography							`redis:"females"`
-	Latitude				int											`redis:"latitude"`
-	Longitude       int											`redis:"longitude"`
-	Magistrate      string									`redis:"magistrate"`
-	Wealth          int											`redis:"wealth"`
-	Supply          map[string] Resource		`redis:"supply"`
+	Name						string									`redis:"name" json:"name"`
+	Males						Demography							`redis:"males" json:"males"`
+	Females					Demography							`redis:"females" json:"females"`
+	Latitude				int											`redis:"latitude" json:"latitude"`
+	Longitude       int											`redis:"longitude" json:"longitude"`
+	Magistrate      string									`redis:"magistrate" json:"magistrate"`
+	Wealth          int											`redis:"wealth" json:"wealth"`
+	Supply          map[string] Resource		`redis:"supply" json:"supply"`
 }
 
 
 func addMunicipal() {
 
 } // addMunicipal
+
+
+func updateMunicipal(m Municipal) {
+
+} // updateMunicipal

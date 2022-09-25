@@ -6,4 +6,5 @@ type Resource struct {
 	Quality					int					`redis:"quality"`
 	Quantity				int					`redis:"quantity"`
 	IsEdible        bool				`redis:"isEdible"`
+	IsPoisonous     bool        `redis:"isPoisonous"`
 }
