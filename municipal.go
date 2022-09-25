@@ -1,29 +1,29 @@
 package ouwsdk
 
 
-type Demography struct {
-	U10							int
-	U20							int
-	U30							int
-	U40							int
-	U50							int
-	U60							int
-	U70							int
-	U80							int
-	U90							int
-	U100						int	
-}
+import (
+	"fmt"
+)
+
 
 type Municipal struct {
 	Name						string									`redis:"name" json:"name"`
-	Males						Demography							`redis:"males" json:"males"`
-	Females					Demography							`redis:"females" json:"females"`
 	Latitude				int											`redis:"latitude" json:"latitude"`
 	Longitude       int											`redis:"longitude" json:"longitude"`
 	Magistrate      string									`redis:"magistrate" json:"magistrate"`
 	Wealth          int											`redis:"wealth" json:"wealth"`
 	Supply          map[string] Resource		`redis:"supply" json:"supply"`
 }
+
+
+func MunicipalMapKey(kid string, mid string) string {
+	return fmt.Sprintf("%s:%s:%s", KEY_KINGDOM, kid, mid)
+} // MunicipalMapKey
+
+
+func MunicipalSetKey(kid string) string {
+	return fmt.Sprintf("%s:%s:%s", KEY_KINGDOMS, kid, KEY_MUNICIPALS)
+} // MunicipalSetKey
 
 
 func addMunicipal() {

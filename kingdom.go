@@ -25,6 +25,16 @@ type Kingdom struct {
 }
 
 
+func KingdomMapKey(n string) string {
+	return fmt.Sprintf("%s:%s", KEY_KINGDOM, n)
+} // KingdomMapKey
+
+
+func KingdomSetKey() string {
+	return KEY_KINGDOMS
+} // KingdomSetKey
+
+
 func KingdomAdd(k Kingdom) {
 
 	key := fmt.Sprintf("%s:%s", KEY_KINGDOM, k.Name)
