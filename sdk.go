@@ -24,6 +24,13 @@ const (
 
 
 const (
+	DEFAULT_NAME_LENGTH_MIN					= 2
+	DEFAULT_CHARS_MIN       				= 1
+	DEFAULT_FORM_SIZE								= 20000
+)
+
+
+const (
 	EMPTY_STR								= ""
 )
 
