@@ -26,7 +26,7 @@ func MunicipalsKey(kid string) string {
 } // MunicipalsKey
 
 
-func addMunicipal() {
+func addMunicipal(m Municipal) {
 
 } // addMunicipal
 
